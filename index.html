@@ -3,18 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex Demo API</title>
+    <title>Pokédex Demo API - Pompompurin Style</title>
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Buscador Pokémon</h1>
+        
+        <div class="method-selector">
+            <label>
+                <input type="radio" name="fetch-method" value="async" checked> 
+                Async / Await
+            </label>
+            <label>
+                <input type="radio" name="fetch-method" value="promise"> 
+                Promesas (.then/.catch)
+            </label>
+        </div>
+
         <div class="search-container">
-            <input type="text" id="pokemon-search" placeholder="Escribe un nombre o ID...">
+            <input type="text" id="pokemon-search" placeholder="Nombre o ID (ej. ditto, pikachu)...">
             <button id="search-btn">Buscar</button>
         </div>
-        <div id="pokemon-container" class="pokemon-container">
-            <!-- La tarjeta del Pokémon se renderizará aquí mediante JS -->
+
+        <div id="metrics" class="metrics-container hidden">
+            <span id="metric-status" class="badge"></span>
+            <span id="metric-time" class="badge"></span>
+            <span id="metric-type" class="badge"></span>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="visual">Tarjeta Visual</button>
+            <button class="tab-btn" data-tab="json">JSON Bruto</button>
+            <button class="tab-btn" data-tab="code">Código JS</button>
+        </div>
+
+        <div class="tab-content active" id="tab-visual">
+            <div id="pokemon-container" class="pokemon-container">
+                <p>Ingresa un Pokémon para comenzar el laboratorio de peticiones.</p>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab-json">
+            <pre><code id="json-output">Aquí aparecerá la respuesta JSON...</code></pre>
+        </div>
+
+        <div class="tab-content" id="tab-code">
+            <pre><code id="code-output">Aquí aparecerá el código ejecutado...</code></pre>
         </div>
     </div>
     

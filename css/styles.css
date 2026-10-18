@@ -1,8 +1,4 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     background-color: #FFFDF2; 
@@ -11,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #4A3525; 
+    color: #4A3525;
+    padding: 20px;
 }
 
 .container {
@@ -20,96 +17,76 @@ body {
     border: 3px solid #4A3525; 
     box-shadow: 0 8px 0 #4A3525; 
     padding: 30px;
-    width: 90%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
 }
 
-h1 {
-    color: #4A3525;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
+h1 { color: #4A3525; margin-bottom: 15px; font-weight: 800; }
 
-.search-container {
+.method-selector {
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-input {
-    flex: 1;
-    padding: 12px;
-    border: 2px solid #4A3525;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: #FFFFFF;
-    color: #4A3525;
-}
+.search-container { display: flex; gap: 10px; margin-bottom: 15px; }
 
-input:focus {
-    outline: none;
-    border-color: #E8813B; 
+input[type="text"] {
+    flex: 1; padding: 12px; border: 2px solid #4A3525;
+    border-radius: 10px; font-size: 16px; background-color: #FFFFFF; color: #4A3525;
 }
-
-input::placeholder {
-    color: #A38771;
-}
+input[type="text"]:focus { outline: none; border-color: #E8813B; }
 
 button {
-    padding: 10px 18px;
-    background-color: #6B4A31; 
-    color: #FFFDF2;
-    border: 2px solid #4A3525;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.2s ease;
+    padding: 10px 18px; background-color: #6B4A31; color: #FFFDF2;
+    border: 2px solid #4A3525; border-radius: 10px; cursor: pointer;
+    font-size: 16px; font-weight: bold; transition: all 0.2s ease;
+}
+button:hover { background-color: #4A3525; }
+button:active { transform: translateY(4px); box-shadow: none; }
+
+
+.metrics-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px;
+}
+.metrics-container.hidden { display: none; }
+.badge {
+    background-color: #4A3525; color: #FFF29C; padding: 5px 10px;
+    border-radius: 8px; font-size: 12px; font-weight: bold;
 }
 
-button:hover {
-    background-color: #4A3525; 
-}
 
-button:active {
-    transform: translateY(4px); 
-    box-shadow: none;
+.tabs { display: flex; gap: 5px; margin-bottom: 15px; }
+.tab-btn {
+    flex: 1; background-color: #F0D56E; color: #4A3525; border: 2px solid #4A3525;
+    padding: 8px; font-size: 14px; border-radius: 10px 10px 0 0; border-bottom: none;
 }
+.tab-btn.active { background-color: #FFFFFF; border-bottom: 2px solid #FFFFFF; margin-bottom: -2px; z-index: 1; }
 
-.pokemon-card {
-    background-color: #FFFFFF;
-    border: 2px solid #4A3525;
-    border-radius: 15px;
-    padding: 20px;
-}
+.tab-content { display: none; background-color: #FFFFFF; border: 2px solid #4A3525; border-radius: 0 0 10px 10px; padding: 20px; text-align: left; }
+.tab-content.active { display: block; }
 
+
+.pokemon-card { text-align: center; }
 .pokemon-card img {
-    width: 150px;
-    height: 150px;
-    background-color: #FFFDF2; 
-    border-radius: 50%;
-    border: 2px dashed #F0D56E; 
-    margin-bottom: 15px;
-    padding: 10px;
+    width: 180px; height: 180px; background-color: #FFFDF2; border-radius: 50%;
+    border: 2px dashed #F0D56E; margin-bottom: 15px; padding: 10px; object-fit: contain;
 }
+.pokemon-card h2 { text-transform: capitalize; color: #4A3525; margin-bottom: 15px; }
 
-.pokemon-card h2 {
-    text-transform: capitalize;
-    color: #4A3525;
-    margin-bottom: 12px;
-}
+.stats-container { margin-top: 15px; text-align: left; }
+.stat-row { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; }
+.stat-name { width: 80px; font-weight: bold; text-transform: capitalize; }
+.stat-bar-bg { flex: 1; background-color: #FFFDF2; border: 1px solid #4A3525; border-radius: 5px; height: 15px; overflow: hidden; margin: 0 10px; }
+.stat-bar-fill { background-color: #E8813B; height: 100%; }
+.stat-val { width: 30px; text-align: right; font-weight: bold; }
 
-.pokemon-card p {
-    margin-bottom: 5px;
-    font-size: 15px;
-}
 
-.error-msg {
-    color: #D9534F; 
-    font-weight: bold;
-    background-color: #FFFFFF;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #D9534F;
-}
+pre { background-color: #FFFDF2; padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid #E8813B; font-size: 13px; }
+code { font-family: monospace; color: #6B4A31; }
+
+.error-msg { color: #D9534F; font-weight: bold; text-align: center; }
