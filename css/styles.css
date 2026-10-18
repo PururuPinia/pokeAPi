@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFDF2; 
+    font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #4A3525; 
+}
+
+.container {
+    background-color: #FFF29C; 
+    border-radius: 20px;
+    border: 3px solid #4A3525; 
+    box-shadow: 0 8px 0 #4A3525; 
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #4A3525;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #4A3525;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    color: #4A3525;
+}
+
+input:focus {
+    outline: none;
+    border-color: #E8813B; 
+}
+
+input::placeholder {
+    color: #A38771;
+}
+
+button {
+    padding: 10px 18px;
+    background-color: #6B4A31; 
+    color: #FFFDF2;
+    border: 2px solid #4A3525;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #4A3525; 
+}
+
+button:active {
+    transform: translateY(4px); 
+    box-shadow: none;
+}
+
+.pokemon-card {
+    background-color: #FFFFFF;
+    border: 2px solid #4A3525;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.pokemon-card img {
+    width: 150px;
+    height: 150px;
+    background-color: #FFFDF2; 
+    border-radius: 50%;
+    border: 2px dashed #F0D56E; 
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.pokemon-card h2 {
+    text-transform: capitalize;
+    color: #4A3525;
+    margin-bottom: 12px;
+}
+
+.pokemon-card p {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.error-msg {
+    color: #D9534F; 
+    font-weight: bold;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #D9534F;
+}
